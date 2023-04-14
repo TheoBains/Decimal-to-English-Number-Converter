@@ -5,14 +5,14 @@ class Main {
 
     Scanner keyboard = new Scanner(System.in);
 
-    System.out.println("Please input your number: ");
-    String num = keyboard.nextLine();
+    System.out.println("Please input all numbers in the range 000 - 999 and in 3-digit form eg. 005 or 043 \n\n");
 
-    for(int i = num.length(); i < 0; i--){
+    while(true){
+      System.out.print("Please input your number: ");
+      String num = keyboard.nextLine();
+  
       convert(num);
-      System.out.println(i);
     }
-
   }
 
   public static void convert(String num){
@@ -28,38 +28,38 @@ class Main {
      //for 3 digit numbers
     if(hundreds > 0){
      if(tens == 1 && ones > 0){
-        System.out.println(names[hundreds] + " hundred and " + teens[ones]);
+        System.out.println(names[hundreds] + " hundred and " + teens[ones] + "\n\n");
       }
       if(tens > 0 && ones == 0){
-        System.out.println(names[hundreds] + " hundred and " + xties[tens]);
+        System.out.println(names[hundreds] + " hundred and " + xties[tens] + "\n\n");
       }
       if(tens == 0 && ones > 0){
-        System.out.println(names[hundreds] + " hundred and " + names[ones]);
+        System.out.println(names[hundreds] + " hundred and " + names[ones] + "\n\n");
       }
       if(tens == 0 && ones == 0){
-        System.out.println(names[hundreds] + " hundred");
+        System.out.println(names[hundreds] + " hundred" + "\n\n");
       }
       if(tens > 1 && ones > 0){
-        System.out.println(names[hundreds] + " hundred and " + xties[tens] + "-" + names[ones]);
+        System.out.println(names[hundreds] + " hundred and " + xties[tens] + "-" + names[ones] + "\n\n");
       }
     } 
 
     //for 2 digit numbers
     if(hundreds == 0 && tens > 0){
       if(tens == 1 && ones > 0){
-        System.out.println(teens[ones]);
+        System.out.println(teens[ones] + "\n\n");
       }
       if(tens > 0 && ones == 0){
-        System.out.println(xties[tens]);
+        System.out.println(xties[tens] + "\n\n");
       }
       if(tens > 1 && ones > 0){
-        System.out.println(xties[tens] + "-" + names[ones]);
+        System.out.println(xties[tens] + "-" + names[ones] + "\n\n");
       }
     } 
 
     //for 1 digit numbers
     if(hundreds == 0 && tens == 0){
-      System.out.println(names[ones]);
+      System.out.println(names[ones] + "\n\n");
     }
   }
   
